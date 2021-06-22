@@ -6,7 +6,11 @@
 #ifndef DS1307RTC_h
 #define DS1307RTC_h
 
-#include <TimeLib.h>
+#if defined(PROD_BUILD)
+  #include "../Time/TimeLib.h"
+#else
+  #include <TimeLib.h>
+#endif
 
 // library interface description
 class DS1307RTC
